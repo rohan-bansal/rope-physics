@@ -56,8 +56,9 @@ public class MainWindow implements Screen {
 
 		font.draw(batch, "[left click] create point", 20, Gdx.graphics.getHeight() - 20);
 		font.draw(batch, "[middle click] delete point", 20, Gdx.graphics.getHeight() - 40);
-		font.draw(batch, "left click a point to fix it in place", 20, Gdx.graphics.getHeight() - 60);
-		font.draw(batch, "right click two points to constrain them with a stick", 20, Gdx.graphics.getHeight() - 80);
+		font.draw(batch, "[space] toggle simulation", 20, Gdx.graphics.getHeight() - 60);
+		font.draw(batch, "left click a point to fix it in place", 20, Gdx.graphics.getHeight() - 85);
+		font.draw(batch, "right click two points to constrain them with a stick", 20, Gdx.graphics.getHeight() - 105);
 
 		batch.end();
 	}
