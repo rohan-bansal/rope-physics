@@ -5,6 +5,8 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -15,13 +17,20 @@ import dev.rbansal.ropephysics.objects.PointManager;
 public class MainWindow implements Screen {
 
 	ShapeRenderer shapeRenderer;
+	SpriteBatch batch;
 	Viewport viewport;
 	OrthographicCamera camera;
+
+	BitmapFont font;
 
 	@Override
 	public void show() {
 
+		font = new BitmapFont(Gdx.files.internal("ari2.fnt"));
+		font.getData().setScale(0.5f);
+
 		shapeRenderer = new ShapeRenderer();
+		batch = new SpriteBatch();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		viewport = new ScreenViewport(camera);
@@ -42,6 +51,15 @@ public class MainWindow implements Screen {
 		if(Simulation.isSimulating()) {
 			Simulation.simulate();
 		}
+
+		batch.begin();
+
+		font.draw(batch, "[left click] create point", 20, Gdx.graphics.getHeight() - 20);
+		font.draw(batch, "[middle click] delete point", 20, Gdx.graphics.getHeight() - 40);
+		font.draw(batch, "left click a point to fix it in place", 20, Gdx.graphics.getHeight() - 60);
+		font.draw(batch, "right click two points to constrain them with a stick", 20, Gdx.graphics.getHeight() - 80);
+
+		batch.end();
 	}
 
 	@Override
