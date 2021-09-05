@@ -1,10 +1,8 @@
 package dev.rbansal.ropephysics.listeners;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import dev.rbansal.ropephysics.Simulation;
 import dev.rbansal.ropephysics.objects.Point;
