@@ -12,5 +12,5 @@ public class Constants {
     public static final Color STICK_COLOR = Color.valueOf("CBCBCBFF");
     public static final float STICK_WIDTH = 5;
 
-    public static final float FRICTION = 0.9995f;
+    public static final float FRICTION = 0.999f;
 }
